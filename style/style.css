@@ -1,0 +1,253 @@
+/*General DOC styling*/
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --col-light-100: #e5e7eb;
+  --col-dark-100: #1e1e24;
+  --col-dark-200: #212121;
+  --col-accent: #1fe3cd;
+  --col-accent-cancel: #d95050;
+
+  --ff-base: "Poppins", sans-serif;
+
+  --fw-regular: 300;
+  --fw-semi-bold: 400;
+  --fw-bold: 700;
+  --fw-very-bold: 1200;
+
+  --fs-200: 0.875rem;
+  --fs-300: 1rem;
+  --fs-400: 1.125rem;
+  --fs-500: 1.375rem;
+  --fs-600: 1.75rem;
+  --fs-650: 2.5rem;
+  --fs-675: 2.75rem;
+  --fs-700: 3.75rem;
+  --fs-800: 5rem;
+
+  --cardSelectTime: 600ms;
+  --floatTime: 4500ms;
+  --colorChangeTime: 200ms;
+
+  --paddingsize-100: 1rem;
+  --paddingsize-200: 1.5rem;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  font-family: var(--ff-base);
+  margin: 0;
+  padding: 0;
+}
+
+/*End General DOC styling*/
+
+/*General Page styling*/
+body {
+  scroll-behavior: smooth;
+}
+
+.page-container {
+  height: 100vh;
+}
+
+.page {
+  height: 100vh;
+  background: var(--col-dark-100);
+  color: var(--col-light-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.portfolio {
+  background: var(--col-dark-200);
+}
+#arrow-up,
+#arrow-down {
+  background: transparent;
+  font-size: var(--fs-650);
+  position: absolute;
+  margin: auto;
+  bottom: var(--paddingsize-200);
+  animation: float var(--floatTime) ease-in-out infinite;
+}
+#arrow-up:hover,
+#arrow-down:hover {
+  color: var(--col-accent);
+  font-size: var(--fs-675);
+  transition: all var(--colorChangeTime) ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    /*box-shadow: 0 5px 15px 0 rgba(0,0,0,0.6);*/
+    transform: translatey(0px);
+  }
+  50% {
+    /*box-shadow: 0 25px 15px 0 rgba(0,0,0,0.2);*/
+    transform: translatey(-20px);
+  }
+  100% {
+    /*box-shadow: 0 5px 15px 0 rgba(0,0,0,0.6);*/
+    transform: translatey(0px);
+  }
+}
+.drop-cap:first-letter {
+  color: var(--col-accent);
+}
+.highlight {
+  color: var(--col-accent);
+}
+/*End General Page styling*/
+
+/*HOMEPAGE Styling*/
+
+.homepage::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-image: url("../assets/SyeGenkjpg.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+}
+.header {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+.header-title {
+  display: flex;
+}
+.hero,
+.hero > * {
+  font-size: var(--fs-600);
+}
+.sub-hero {
+  font-size: var(--fs-500);
+}
+
+/*End HOMEPAGE Styling*/
+
+/*PORTFOLIO Styling*/
+.portfolio {
+  width: 100%;
+}
+
+.container {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.project {
+  width: 80px;
+  /*border-radius: .75rem;*/
+  background-size: cover;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 2rem;
+  margin: 0 10px;
+  display: flex;
+  align-items: flex-end;
+  transition: var(--cardSelectTime) cubic-bezier(0.28, -0.03, 0.99);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.8);
+}
+
+.project > .row {
+  color: var(--col-light-100);
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.project > .row > .icon {
+  color: var(--col-light-100);
+  background: var(--col-dark-100);
+  border-radius: 50%;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
+.project > .row > .description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  height: 80px;
+  width: 520px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-delay: calc(var(--cardSelectTime) / 2);
+  transition: all calc(var(--cardSelectTime) / 2) ease;
+}
+
+.description p {
+  padding-top: 5px;
+  color: var(--col-light-100);
+}
+
+.description h4 {
+  text-transform: uppercase;
+}
+
+input {
+  display: none;
+}
+
+input:checked + label {
+  width: 600px;
+}
+
+input:checked + label .description {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.project[for="proj1"] {
+  background-image: url("../assets/test.jpeg");
+}
+
+.project[for="proj2"] {
+  background-image: url("../assets/test.jpeg");
+}
+
+.project[for="proj3"] {
+  background-image: url("../assets/test.jpeg");
+}
+
+.project[for="proj4"] {
+  background-image: url("../assets/test.jpeg");
+}
+button {
+  width: 50px;
+  height: 20px;
+}
+
+/*End PORTFOLIO Styling*/
