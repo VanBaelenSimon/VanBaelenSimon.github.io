@@ -24,16 +24,83 @@
           <h2 class="drop-cap sub-hero">| Front-end Developer</h2>
           <h2 class="drop-cap sub-hero">| UI/UX Designer</h2>
         </div>
-
+        <div class="paging-container">
+          <h1 class="paging-number">1</h1>
+          <div class="vertical-line"></div>
+          <h2 class="vertical-text">Home</h2>
+        </div>
         <i id="arrow-down" class="fa-solid fa-arrow-down"></i>
       </section>
-      <section class="page about"><h1>ABOUT</h1></section>
+      <section class="page about">
+        <h1>ABOUT</h1>
+        <div class="paging-container">
+          <h1 class="paging-number">2</h1>
+          <div class="vertical-line"></div>
+          <h2 class="vertical-text">About</h2>
+        </div>
+      </section>
       <section class="page portfolio">
         <div id="project" class="container"></div>
+        <div class="paging-container">
+          <h1 class="paging-number">3</h1>
+          <div class="vertical-line"></div>
+          <h2 class="vertical-text portfolio-spacing">Portfolio</h2>
+        </div>
       </section>
       <section class="page contact">
-        <h1>CONTACT</h1>
+        <div class="contact-left">
+          <h3 class="contact-icon"><i class="fa-solid fa-phone"></i> PHONE</h3>
+          <span>+32 472 41 40 27</span>
+          <h3 class="contact-icon">
+            <i class="fa-brands fa-linkedin"></i> LINKEDIN
+          </h3>
+          <span>Simon Van Baelen</span>
+          <h3 class="contact-icon">
+            <i class="fa-solid fa-envelope"></i> MAIL
+          </h3>
+          <span>simonvanbaelen24@gmail.com</span>
+        </div>
         <i id="arrow-up" class="fa-solid fa-arrow-up"></i>
+        <div class="paging-container">
+          <h1 class="paging-number">4</h1>
+          <div class="vertical-line"></div>
+          <h2 class="vertical-text contact-spacing">Contact Me</h2>
+        </div>
+        <div class="contact-right">
+          <h1 class="contact-title">
+            Let's <span class="highlight">Talk!</span>
+          </h1>
+          <form class="contact-form" action="">
+            <!--            <label for="fname"></label>-->
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="First Name"
+            />
+
+            <!--            <label for="phone"></label>-->
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Phone Number"
+            />
+            <!--            <label for="email"></label>-->
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email address"
+            />
+            <textarea
+              id="subject"
+              name="subject"
+              placeholder="Write your message here ..."
+              style="height: 200px"
+            ></textarea>
+          </form>
+        </div>
       </section>
     </main>
   </body>

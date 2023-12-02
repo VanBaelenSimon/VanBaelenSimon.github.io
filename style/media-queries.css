@@ -1,4 +1,4 @@
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 900px) {
   .hero,
   .hero > * {
     font-size: var(--fs-800) !important;
@@ -8,6 +8,26 @@
   }
   .header {
     left: 10rem !important;
+  }
+  .paging-container {
+    display: flex;
+    right: 4rem;
+  }
+}
+@media screen and (min-width: 750px) {
+  .hero,
+  .hero > * {
+    font-size: var(--fs-800);
+  }
+  .sub-hero {
+    font-size: var(--fs-600);
+  }
+  .header {
+    left: 7rem !important;
+  }
+  .paging-container {
+    display: flex;
+    right: 2rem;
   }
 }
 @media screen and (min-width: 600px) {
@@ -20,6 +40,10 @@
   }
   .header {
     left: 4rem;
+  }
+  .paging-container {
+    display: flex;
+    right: 1rem;
   }
 }
 @media screen and (min-width: 450px) {
