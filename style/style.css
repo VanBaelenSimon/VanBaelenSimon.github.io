@@ -15,6 +15,8 @@
   --fw-bold: 700;
   --fw-very-bold: 1200;
 
+  --fs-100: 0.65rem;
+  --fs-150: 0.7rem;
   --fs-200: 0.875rem;
   --fs-300: 1rem;
   --fs-400: 1.125rem;
@@ -28,6 +30,7 @@
   --cardSelectTime: 600ms;
   --floatTime: 1500ms;
   --colorChangeTime: 200ms;
+  --moveTime: 500ms;
 
   --paddingsize-100: 1rem;
   --paddingsize-200: 1.5rem;
@@ -295,15 +298,16 @@ button {
 /*End PORTFOLIO Styling*/
 
 /*CONTACT Styling*/
-
 .contact-left {
+  display: none;
   position: absolute;
   left: 5rem;
 }
 .contact-right {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  gap: 10px;
+  margin-bottom: 4rem;
 }
 
 .contact-icon,
@@ -322,26 +326,84 @@ button {
 .contact-title {
   padding-inline: 2rem;
   border-bottom: 2px solid var(--col-accent);
+  text-align: center;
 }
-
 .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.input-box {
+  position: relative;
+}
+.input-box input,
+.input-box textarea {
   width: 100%;
-}
-.contact-form input {
-  padding-top: 0.5rem;
-  text-align: left;
-}
-.contact-form input,
-select,
-textarea {
+  padding: 10px;
+  border: 1px solid var(--col-light-100);
+  background: var(--col-dark-100);
+  border-radius: 5px;
+  outline: none;
   color: var(--col-light-100);
-  background: transparent;
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-bottom: 2px solid var(--col-accent);
-  border-radius: 4px;
-  resize: vertical;
+  font-size: var(--fs-300);
+  transition: var(--moveTime);
 }
-
+.input-box span {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: var(--fs-300);
+  color: var(--col-light-100);
+  text-transform: uppercase;
+  transition: var(--moveTime);
+}
+.input-box input:valid ~ span,
+.input-box input:focus ~ span,
+.input-box textarea:focus ~ span {
+  color: var(--col-accent);
+  transform: translateX(10px) translateY(-7px);
+  font-size: var(--fs-150);
+  padding: 0 10px;
+  background: var(--col-dark-100);
+  border-inline: 1px solid var(--col-accent);
+  letter-spacing: 0.15rem;
+}
+.input-box input:valid,
+.input-box input:focus,
+.input-box textarea:focus {
+  border: 1px solid var(--col-accent);
+}
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-buttons button {
+  background: var(--col-dark-100);
+  border-radius: 5px;
+  width: auto;
+  height: 2.5rem;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-bold);
+}
+.contact-send {
+  border: 2px solid var(--col-accent);
+}
+.contact-clear {
+  border: 2px solid var(--col-accent-cancel);
+}
+.contact-send:hover {
+  color: var(--col-dark-100);
+  background: var(--col-accent);
+}
+.contact-clear:hover {
+  color: var(--col-dark-100);
+  background: var(--col-accent-cancel);
+}
 /*End CONTACT Styling*/

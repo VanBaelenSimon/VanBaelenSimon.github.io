@@ -1,33 +1,6 @@
-@media screen and (min-width: 900px) {
-  .hero,
-  .hero > * {
-    font-size: var(--fs-800) !important;
-  }
-  .sub-hero {
-    font-size: var(--fs-600) !important;
-  }
+@media screen and (min-width: 450px) {
   .header {
-    left: 10rem !important;
-  }
-  .paging-container {
-    display: flex;
-    right: 4rem;
-  }
-}
-@media screen and (min-width: 750px) {
-  .hero,
-  .hero > * {
-    font-size: var(--fs-800);
-  }
-  .sub-hero {
-    font-size: var(--fs-600);
-  }
-  .header {
-    left: 7rem !important;
-  }
-  .paging-container {
-    display: flex;
-    right: 2rem;
+    left: 4rem;
   }
 }
 @media screen and (min-width: 600px) {
@@ -43,11 +16,63 @@
   }
   .paging-container {
     display: flex;
+    right: 0;
+  }
+}
+@media screen and (min-width: 750px) {
+  .hero,
+  .hero > * {
+    font-size: var(--fs-800);
+  }
+  .sub-hero {
+    font-size: var(--fs-600);
+  }
+  .header {
+    left: 7rem !important;
+  }
+  .paging-container {
+    display: flex;
     right: 1rem;
   }
 }
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 900px) {
+  .hero,
+  .hero > * {
+    font-size: var(--fs-800) !important;
+  }
+  .sub-hero {
+    font-size: var(--fs-600) !important;
+  }
   .header {
-    left: 4rem;
+    left: 10rem !important;
+  }
+  .contact-left {
+    display: block;
+    left: 2rem;
+  }
+}
+@media screen and (min-width: 1075px) {
+  .contact-container {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .contact-buttons {
+    gap: 20px;
+  }
+  .contact-form {
+    gap: 20px;
+  }
+  .contact-right {
+    gap: 20px;
+  }
+  .contact-left {
+    display: block;
+    left: 5rem;
+  }
+}
+@media screen and (min-width: 1075px) {
+  .paging-container {
+    display: flex;
+    right: 4rem;
   }
 }
