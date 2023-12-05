@@ -58,7 +58,7 @@
 /*End General DOC styling*/
 
 /*General Page styling*/
-body *{
+body * {
   scroll-behavior: smooth;
 }
 
@@ -327,6 +327,7 @@ button {
   padding-inline: 2rem;
   border-bottom: 2px solid var(--col-accent);
   text-align: center;
+  margin-bottom: 10px;
 }
 .contact-form {
   display: flex;
@@ -363,12 +364,12 @@ button {
   text-transform: uppercase;
   transition: var(--moveTime);
 }
-.input-box textarea{
+.input-box textarea {
   height: 200px;
- }
+}
 .input-box input:valid ~ span,
 .input-box input:focus ~ span,
-.input-box textarea:focus ~ span{
+.input-box textarea:focus ~ span {
   color: var(--col-accent);
   transform: translateX(10px) translateY(-7px);
   font-size: var(--fs-150);
@@ -377,17 +378,17 @@ button {
   border-inline: 1px solid var(--col-accent);
   letter-spacing: 0.15rem;
 }
-.span-highlight{
-  color: var(--col-accent)!important;
+.span-highlight {
+  color: var(--col-accent) !important;
   transform: translateX(10px) translateY(-7px);
-  font-size: var(--fs-150)!important;
-  padding: 0 10px!important;
+  font-size: var(--fs-150) !important;
+  padding: 0 10px !important;
   background: var(--col-dark-100);
   border-inline: 1px solid var(--col-accent);
   letter-spacing: 0.15rem;
 }
-.input-border{
-  border: 1px solid var(--col-accent)!important;
+.input-border {
+  border: 1px solid var(--col-accent) !important;
 }
 .input-box input:valid,
 .input-box input:focus,

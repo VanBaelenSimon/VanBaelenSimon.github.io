@@ -58,6 +58,10 @@
   }
   .contact-buttons {
     gap: 20px;
+    flex-direction: row;
+  }
+  .contact-buttons button {
+    width: 100%;
   }
   .contact-form {
     gap: 20px;

@@ -44,8 +44,7 @@ function clearForm() {
   subjectCheck();
 }
 function sendMail(contactData) {
-  let body = contactData.message;
   window.location.href =
     "mailto:simonvanbaelen24@gmail.com?subject=Contact Mail From Website&body=" +
-    body;
+    contactData.message;
 }
