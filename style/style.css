@@ -5,6 +5,7 @@
   --col-light-100: #e5e7eb;
   --col-dark-100: #1e1e24;
   --col-dark-200: #212121;
+  --col-dark-300: #000000;
   --col-accent: #1fe3cd;
   --col-accent-cancel: #d95050;
 
@@ -67,7 +68,7 @@ body * {
 }
 
 .page {
-  height: 100vh;
+  height: 100dvh;
   background: var(--col-dark-100);
   color: var(--col-light-100);
   display: flex;
@@ -81,10 +82,12 @@ body * {
 }
 #arrow-up,
 #arrow-down {
+  cursor: pointer;
   background: transparent;
   font-size: var(--fs-650);
   position: absolute;
   margin: auto;
+  padding: 1rem;
   bottom: var(--paddingsize-200);
   animation: float var(--floatTime) ease-in-out infinite;
 }
@@ -196,6 +199,57 @@ body * {
 
 /*End HOMEPAGE Styling*/
 
+/*ABOUT-PAGE Styling*/
+
+.about {
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-links {
+  position: absolute;
+  top: 2.5rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.link {
+  cursor: pointer;
+  list-style: none;
+  padding: 5px 10px;
+  width: 120px;
+  text-align: center;
+  border-radius: 0.5rem;
+  background: var(--col-dark-100);
+  color: var(--col-light-100);
+  font-weight: var(--fw-bold);
+  border: 1px dashed var(--col-accent);
+}
+
+.link:hover {
+  background: var(--col-accent);
+  color: var(--col-dark-100);
+}
+.active {
+  background: var(--col-accent);
+  color: var(--col-dark-100);
+  box-shadow: 0 0 7px 1px var(--col-accent);
+}
+
+.tab-box {
+  position: absolute;
+  min-height: 80%;
+  bottom: 2.5rem;
+  /*left: 5%;*/
+  border: 1px dashed var(--col-accent);
+  padding: 10px;
+}
+
+/*End ABOUT-PAGE Styling*/
+
 /*PORTFOLIO Styling*/
 .portfolio {
   width: 100%;
@@ -211,7 +265,6 @@ body * {
 
 .project {
   width: 80px;
-  /*border-radius: .75rem;*/
   background-size: cover;
   cursor: pointer;
   overflow: hidden;

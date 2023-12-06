@@ -14,10 +14,11 @@
     <!--    <script async src="scripts/projectCards.js"></script>-->
     <script async src="scripts/scrollTop.js"></script>
     <script defer src="scripts/contactForm.js"></script>
+    <script defer src="scripts/tabSwitcher.js"></script>
   </head>
   <body>
     <main class="page-container" id="top">
-      <section class="page homepage">
+      <section class="page homepage" id="homepage">
         <div class="header">
           <div class="header-title">
             <h1 class="hero">Hi, I'm <span class="highlight">Simon!</span></h1>
@@ -32,8 +33,16 @@
         </div>
         <i id="arrow-down" class="fa-solid fa-arrow-down"></i>
       </section>
-      <section class="page about">
-        <h1>ABOUT</h1>
+      <section class="page about" id="about">
+        <ul class="tab-links">
+          <li class="link active" id="tab1">About Me</li>
+          <li class="link" id="tab2">Experience</li>
+          <li class="link" id="tab3">Education</li>
+        </ul>
+        <div style="clear: both"></div>
+        <div class="tab-box" id="home-tab1"><h2>About Me</h2></div>
+        <div class="tab-box" id="home-tab2"><h2>My Job Experience</h2></div>
+        <div class="tab-box" id="home-tab3"><h2>My Education</h2></div>
         <div class="paging-container">
           <h1 class="paging-number">2</h1>
           <div class="vertical-line"></div>
@@ -53,7 +62,7 @@
           <h3 class="contact-icon"><i class="fa-solid fa-phone"></i> PHONE</h3>
           <span>+32 472 41 40 27</span>
           <h3 class="contact-icon">
-            <i class="fa-brands fa-linkedin"></i> LINKEDIN
+            <i class="fa-brands fa-linkedin"></i> LINKEDIN 14
           </h3>
           <span>Simon Van Baelen</span>
           <h3 class="contact-icon">
