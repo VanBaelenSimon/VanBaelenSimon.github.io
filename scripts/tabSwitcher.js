@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById(tabPrefix + tabs[index]).style.display = "none";
   }
   //set default active page
-  document.getElementById("home-tab1").style.display = "block";
+  document.getElementById("home-tab2").style.display = "block";
 
   //check which element the click event occurs on, display to block
   const tabLinks = document.querySelectorAll("ul.tab-links li");
