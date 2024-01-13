@@ -3,21 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Simon's web portfolio, the design and web development capabilities will make you get in contact."
+    />
     <title>Simon Van Baelen</title>
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/media-queries.css" />
-    <script
-      src="https://kit.fontawesome.com/86884b0491.js"
-      crossorigin="anonymous"
-    ></script>
+    <!--    <script src="scripts/index.js"></script>-->
     <!--    <script src="scripts/scrollSnap.js"></script>-->
-    <!--    <script async src="scripts/projectCards.js"></script>-->
     <script async src="scripts/scrollTop.js"></script>
     <script defer src="scripts/contactForm.js"></script>
     <script defer src="scripts/tabSwitcher.js"></script>
     <script async src="scripts/preloader.js"></script>
+    <script defer src="scripts/modal.js"></script>
   </head>
   <body>
+    <div class="project-modal" id="project-webshop">
+      <i class="fa fa-times btn-close" id="btn-close-webshop"></i>
+      <h1>GamesForRent, Webshop</h1>
+      <br />
+      <p>Webshop created using HTML, CSS and JS</p>
+      <p>Group project for WPL2 in "Graduaat Programming" @ Hogeschool PXL</p>
+    </div>
+    <div class="project-modal" id="project-routesgo">
+      <i class="fa fa-times btn-close" id="btn-close-routesgo"></i>
+      <h1>RoutesGo, App Design</h1>
+      <br />
+      <p>App design and prototype created using Figma</p>
+      <p>
+        Group project for wpl1 in "Graduaat Digitale Vormgeving" @ Hogeschool
+        PXL
+      </p>
+    </div>
+    <div class="project-modal" id="project-wpl">
+      <div class="scroll-box">
+        <i class="fa fa-times btn-close" id="btn-close-wpl"></i>
+        <h1>Werkplekleren 1</h1>
+        <p>
+          Student Course for getting ready to integrate into the workplace as a
+          designer / developper.
+        </p>
+        <br />
+        <h3>Assignment 1: POP Sessie</h3>
+        <p>Assessing personal performance: hard & soft skills</p>
+        <br />
+        <h3>Assignment 2: Werkveldverkenning - Reflectie Seminaries</h3>
+        <p>
+          Talking about Seminars, things we learned and information gathered.
+        </p>
+        <br />
+        <h3>Assignment 3: Werkveldverkenning - Analyse Arbeidsmarkt</h3>
+        <p>
+          Researching Job Vacancies, what are the requirements, what is the
+          minimal degree needed.
+        </p>
+        <br />
+        <h3>Assignment 4: Concept Poster</h3>
+        <p>Making a concept poster for the group dashboard.</p>
+        <br />
+        <h3>Assignment 5: Portfolio</h3>
+        <p>
+          Designing and developing a personal web portfolio using HTML CSS & JS.
+        </p>
+        <br />
+        <h3>Assignment 5.1: Self-reflection</h3>
+        <br />
+        <a
+          href="/assets/ZelfReflectie_SimonVanBaelen_1DVOB.pdf"
+          class="download-btn"
+          download
+        >
+          <i class="fa-solid fa-download"></i> Download
+        </a>
+      </div>
+    </div>
     <div class="preloader"></div>
     <main class="page-container" id="top">
       <section class="page homepage" id="homepage">
@@ -103,7 +163,117 @@
         </div>
       </section>
       <section class="page portfolio">
-        <div id="project" class="container"></div>
+        <div class="project-container">
+          <div class="project">
+            <div class="project-title">
+              <h2>Videogame Webshop</h2>
+              <p>Make finding new games easy using AllGamesForRent.</p>
+            </div>
+            <img
+              class="project-image"
+              src="assets/Webshop3.jpg"
+              alt="Webshop landing page"
+            />
+            <div class="project-description">
+              <div class="description-text">
+                <h3>Product / UI</h3>
+                <p>Webshop and App</p>
+              </div>
+              <div class="description-icon" onclick="ModalWebshop()">
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+            </div>
+            <div class="project-tags">
+              <p>HTML5</p>
+              <p>CSS</p>
+              <p>JavaScript</p>
+              <p>VUE.JS</p>
+              <p>C#</p>
+              <p>SQL DB</p>
+              <p>Figma</p>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-title">
+              <h2>RoutesGO</h2>
+              <p>Route planning for walks, cycling and running.</p>
+            </div>
+            <img
+              class="project-image"
+              src="assets/RoutesGo.png"
+              alt="RoutesGo Homepage,"
+            />
+            <div class="project-description">
+              <div class="description-text">
+                <h3>UI / UX Prototype</h3>
+                <p>App Design</p>
+              </div>
+              <div class="description-icon" onclick="ModalRoutesGO()">
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+            </div>
+            <div class="project-tags">
+              <p>Figma</p>
+              <p>User Interface</p>
+              <p>User Experience</p>
+              <p>Prototype</p>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-title">
+              <h2>Werkplekleren 1</h2>
+              <p>Student Course for workplace integration.</p>
+            </div>
+            <img
+              class="project-image"
+              src="assets/wpl1.png"
+              alt="RoutesGo Homepage,"
+            />
+            <div class="project-description">
+              <div class="description-text">
+                <h3>Assignments</h3>
+                <p>App Design and Web Dev</p>
+              </div>
+              <div class="description-icon" onclick="ModalWPL()">
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+            </div>
+            <div class="project-tags">
+              <p>Figma</p>
+              <p>UI / UX</p>
+              <p>HTML5</p>
+              <p>CSS</p>
+              <p>JS</p>
+              <p>Personal Improvement</p>
+            </div>
+          </div>
+          <!--          <div class="project">-->
+          <!--            <div class="project-title">-->
+          <!--              <h2>Coffee Corner</h2>-->
+          <!--              <p>Printable design for our coffee corner.</p>-->
+          <!--            </div>-->
+          <!--            <img-->
+          <!--              class="project-image"-->
+          <!--              src="assets/Coffee.png"-->
+          <!--              alt="RoutesGo Homepage,"-->
+          <!--            />-->
+          <!--            <div class="project-description">-->
+          <!--              <div class="description-text">-->
+          <!--                <h3>Graphic Design</h3>-->
+          <!--                <p>Graphic Design</p>-->
+          <!--              </div>-->
+          <!--              <div class="description-icon">-->
+          <!--                <i class="fa-solid fa-arrow-up"></i>-->
+          <!--              </div>-->
+          <!--            </div>-->
+          <!--            <div class="project-tags">-->
+          <!--              <p>Photoshop</p>-->
+          <!--              <p>Illustrator</p>-->
+          <!--              <p>Typography</p>-->
+          <!--              <p>Graphic Design</p>-->
+          <!--            </div>-->
+          <!--          </div>-->
+        </div>
         <div class="paging-container">
           <h1 class="paging-number">3</h1>
           <div class="vertical-line"></div>
@@ -115,7 +285,7 @@
           <h3 class="contact-icon"><i class="fa-solid fa-phone"></i> PHONE</h3>
           <span>+32 472 41 40 27</span>
           <h3 class="contact-icon">
-            <i class="fa-brands fa-linkedin"></i> LINKEDIN 14
+            <i class="fa-brands fa-linkedin"></i> LINKEDIN
           </h3>
           <span>Simon Van Baelen</span>
           <h3 class="contact-icon">
@@ -131,16 +301,16 @@
             <div class="contact-container">
               <div class="input-box">
                 <input id="fname" type="text" required="required" />
-                <span>Name *</span>
+                <label for="fname">Name *</label>
               </div>
               <div class="input-box">
                 <input id="phone" type="tel" required="required" />
-                <span>Phone Number</span>
+                <label for="phone">Phone Number</label>
               </div>
             </div>
             <div class="input-box">
               <input id="email" type="email" required="required" />
-              <span id="span-email">Email *</span>
+              <label id="span-email" for="email">Email *</label>
             </div>
             <div class="input-box">
               <textarea
@@ -149,7 +319,7 @@
                 id="subject"
                 name="subject"
               ></textarea>
-              <span id="span-subject">Message *</span>
+              <label for="subject" id="span-subject">Message *</label>
             </div>
             <div class="contact-buttons">
               <button
@@ -177,5 +347,9 @@
         </div>
       </section>
     </main>
+    <script
+      src="https://kit.fontawesome.com/86884b0491.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

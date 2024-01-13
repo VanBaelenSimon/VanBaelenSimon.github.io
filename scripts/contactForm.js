@@ -1,15 +1,11 @@
 const subject = document.getElementById("subject");
 const spanSubject = document.getElementById("span-subject");
-
 let fname = document.getElementById("fname");
 let phoneNumb = document.getElementById("phone");
 let email = document.getElementById("email");
-
-// const email = document.getElementById("email");
-// const spanEmail = document.getElementById("span-email");
-
 const sendButton = document.getElementById("button-send");
 const clearButton = document.getElementById("button-clear");
+
 function subjectCheck() {
   if (subject.value !== "") {
     spanSubject.classList.add("span-highlight");
@@ -29,18 +25,16 @@ function sendForm() {
     };
     console.log(contactData);
     sendMail(contactData);
-    // clearForm();
+    clearForm();
   } else {
     console.log("Required input fields are not valid");
   }
 }
 function clearForm() {
-  // getData();
   fname.value = "";
   phoneNumb.value = "";
   email.value = "";
   subject.value = "";
-
   subjectCheck();
 }
 function sendMail(contactData) {

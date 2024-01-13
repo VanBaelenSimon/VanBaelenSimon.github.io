@@ -1,8 +1,7 @@
 /*General DOC styling*/
-/*@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Poppins:wght@400;500;600&display=swap");*/
-@import url("https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap");
 :root {
   --col-light-100: #e5e7eb;
+  --col-gray: rgba(229, 231, 235, 0.75);
   --col-dark-100: #1e1e24;
   --col-dark-200: #212121;
   --col-dark-300: #000000;
@@ -137,15 +136,12 @@ body * {
 
 @keyframes float {
   0% {
-    /*box-shadow: 0 5px 15px 0 rgba(0,0,0,0.6);*/
     transform: translatey(0px);
   }
   50% {
-    /*box-shadow: 0 25px 15px 0 rgba(0,0,0,0.2);*/
     transform: translatey(-10px);
   }
   100% {
-    /*box-shadow: 0 5px 15px 0 rgba(0,0,0,0.6);*/
     transform: translatey(0px);
   }
 }
@@ -197,7 +193,6 @@ body * {
   margin-top: 4.75rem;
 }
 .hyperlink {
-  /*text-decoration: none;*/
   cursor: pointer;
 }
 /*End General Page styling*/
@@ -213,7 +208,7 @@ body * {
   width: 100%;
   height: 100%;
   opacity: 0.1;
-  background-image: url("../assets/SyeGenkjpg.jpg");
+  background-image: url("../assets/SyeGenkjpg.webp");
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
@@ -296,101 +291,111 @@ body * {
 /*PORTFOLIO Styling*/
 .portfolio {
   width: 100%;
+  height: auto;
+  padding-block: 7rem;
 }
-
-.container {
-  height: 400px;
-  width: 100%;
+.project-container {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
+  width: 90%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--paddingsize-200);
 }
-
 .project {
-  width: 80px;
-  background-size: cover;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 2rem;
-  margin: 0 10px;
+  border: 1px solid var(--col-light-100);
+  padding: var(--paddingsize-200);
   display: flex;
-  align-items: flex-end;
-  transition: var(--cardSelectTime) cubic-bezier(0.28, -0.03, 0.99, 0);
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.8);
-}
-
-.project > .row {
-  color: var(--col-light-100);
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.project > .row > .icon {
-  color: var(--col-light-100);
-  background: var(--col-dark-100);
-  border-radius: 50%;
-  width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 15px;
-}
-
-.project > .row > .description {
-  display: flex;
-  justify-content: center;
   flex-direction: column;
-  overflow: hidden;
-  height: 80px;
-  width: 520px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition-delay: calc(var(--cardSelectTime) / 2);
-  transition: all calc(var(--cardSelectTime) / 2) ease;
+  border-radius: var(--paddingsize-200);
+  max-width: 28rem;
 }
-
-.description p {
-  padding-top: 5px;
+.project-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--col-light-100);
+  padding-bottom: var(--paddingsize-100);
+}
+.project-image {
+  border-radius: 1rem;
+  margin-block: var(--paddingsize-100);
+  width: 100%;
+  aspect-ratio: 398/286;
+  object-fit: cover;
+}
+.project-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--col-light-100);
+  padding-bottom: var(--paddingsize-200);
+}
+.description-icon {
+  padding: 15px;
+}
+.description-icon:hover * {
+  color: var(--col-accent);
+  cursor: pointer;
+}
+.description-icon * {
+  font-size: var(--fs-600);
+  font-weight: bolder;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+}
+.project-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: var(--paddingsize-100);
+}
+.project-tags * {
+  border: 1px solid var(--col-gray);
+  color: var(--col-gray);
+  padding: 5px 15px 5px 15px;
+  border-radius: 1rem;
+}
+.project-modal {
+  width: 100vw;
+  height: 100%;
+  background: white;
+  position: fixed;
+  display: none;
+  z-index: 100;
+  background: var(--col-dark-200);
+  padding: 2rem;
+}
+.project-modal * {
   color: var(--col-light-100);
 }
-
-.description h4 {
-  text-transform: uppercase;
+.is-visible {
+  display: flex;
+  flex-direction: column;
 }
-
-.portfolio input {
-  display: none;
+.btn-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: var(--fs-500);
+  color: var(--col-light-100);
+  padding: 0.5rem;
 }
-
-.portfolio input:checked + label {
-  width: 600px;
+.download-btn {
+  border: 1px solid var(--col-light-100);
+  width: fit-content;
+  padding: 0.5rem;
+  margin-top: 1rem;
 }
-
-.portfolio input:checked + label .description {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+.scroll-box {
+  height: calc(100% + 4rem);
+  width: 100%;
+  overflow-y: auto;
 }
-
-.project[for="proj1"] {
-  background-image: url("../assets/test.jpeg");
-}
-
-.project[for="proj2"] {
-  background-image: url("../assets/test.jpeg");
-}
-
-.project[for="proj3"] {
-  background-image: url("../assets/test.jpeg");
-}
-
-.project[for="proj4"] {
-  background-image: url("../assets/test.jpeg");
-}
-button {
-  width: 50px;
-  height: 20px;
-}
-
 /*End PORTFOLIO Styling*/
 
 /*CONTACT Styling*/
@@ -411,8 +416,7 @@ button {
   font-size: var(--fs-500);
   color: var(--col-light-100);
 }
-
-.contact-left span {
+.contact-left label {
   font-size: var(--fs-300);
 }
 .contact-title,
@@ -450,7 +454,7 @@ button {
   font-size: var(--fs-300);
   transition: var(--moveTime);
 }
-.input-box span {
+.input-box label {
   position: absolute;
   left: 0;
   padding: 10px;
@@ -463,9 +467,9 @@ button {
 .input-box textarea {
   height: 200px;
 }
-.input-box input:valid ~ span,
-.input-box input:focus ~ span,
-.input-box textarea:focus ~ span {
+.input-box input:valid ~ label,
+.input-box input:focus ~ label,
+.input-box textarea:focus ~ label {
   color: var(--col-accent);
   transform: translateX(10px) translateY(-7px);
   font-size: var(--fs-150);
@@ -496,8 +500,8 @@ button {
   flex-direction: column;
   gap: 10px;
 }
-.contact-buttons button {
-  background: var(--col-dark-100);
+button {
+  background: transparent;
   border-radius: 5px;
   width: auto;
   height: 2.5rem;
