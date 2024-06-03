@@ -232,6 +232,9 @@ body * {
 .sub-hero {
   font-size: var(--fs-500);
 }
+.header-resume{
+  margin-top: 2rem;
+}
 
 /*End HOMEPAGE Styling*/
 
@@ -369,6 +372,7 @@ body * {
   z-index: 100;
   background: var(--col-dark-200);
   padding: 2rem;
+  overflow: scroll;
 }
 .project-modal * {
   color: var(--col-light-100);
