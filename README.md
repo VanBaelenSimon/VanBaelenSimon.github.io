@@ -2,5 +2,3 @@
 personal portfolio
 
 https://vanbaelensimon.github.io/
-
-# This is a duplicate repository, the original repo is a private classroom repo for a schoolproject
