@@ -1,6 +1,9 @@
 # VanBaelenSimon.github.io
 personal portfolio
 
-https://vanbaelensimon.github.io/index.html
+https://vanbaelensimon.github.io/
 
-# This is a duplicate repository, the original repo is a private classroom repo for a schoolproject
+# Bronnen
+
+[Google](https://google.com) </br>
+[w3sschool](https://www.w3schools.com) </br>
